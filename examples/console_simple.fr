@@ -1,0 +1,19 @@
+// Exemple simple d'utilisation de la console en FranceScript
+
+ecrire("Bienvenue dans FranceScript!")
+ecrire("Entrez votre nom:")
+
+ajouterALaLigne("> ")
+variable nom egal lire()
+
+ecrire("Bonjour " + nom + "!")
+
+ecrire("Entrez votre âge:")
+ajouterALaLigne("> ")
+variable ageTexte egal lire()
+variable age egal toInt(ageTexte)
+
+ecrire("Votre âge est: " + age)
+
+variable anneeNaissance egal 2024 - age
+ecrire("Vous êtes né(e) en " + anneeNaissance)

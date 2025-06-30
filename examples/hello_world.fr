@@ -1,0 +1,13 @@
+classe Personne ouvrir
+    constructeur(nom, age) ouvrir
+        ceci->nom egal nom
+        ceci->age egal age
+    refermer
+    
+    fonction sePresenter() ouvrir
+        retourne "Je suis " + cette->nom + ", j'ai " + ceci->age + " ans"
+    refermer
+refermer
+
+variable alice egal nouveau Personne("Alice", 30)
+ecrire(alice->sePresenter())

@@ -1,0 +1,33 @@
+// Exemple simple de serveur web en FranceScript
+
+variable serveur egal newServeurWeb()
+
+// Configuration du port
+serveur->definirPort(8080)
+
+// Route GET simple
+serveur->get("/", fonction(req) ouvrir
+    retourne reponseTexte("Ceci est la page d'accueil")
+refermer)
+
+// Route GET avec paramètres
+serveur->get("/salut", fonction(req) ouvrir
+    variable nom egal obtenirParametre(req, "nom")
+    variable message egal "Salut " + nom + "!"
+    retourne reponseJson("{ \"salutation\": \"" + message + "\" }")
+refermer)
+
+// Route POST pour créer des utilisateurs
+serveur->post("/utilisateurs", fonction(req) ouvrir
+    ecrire("Nouveau utilisateur reçu")
+    retourne reponseJson("{ \"status\": \"utilisateur créé\", \"id\": 123 }")
+refermer)
+
+// Démarrage du serveur
+ecrire("Démarrage du serveur web sur le port 8080...")
+ecrire("Routes disponibles:")
+ecrire("- GET /")
+ecrire("- GET /salut?nom=VotreNom") 
+ecrire("- POST /utilisateurs")
+
+serveur->demarrer()
